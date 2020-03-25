@@ -45,7 +45,9 @@ plt.show()
 
 n. Find the location means and 2x2 covariance matrix for this data set, and compute the eigenvalues and eigenvectors of the matrix. Find the ellipse that these generate. [The major and minor axes directions are given by the eigenvectors. Show the point cloud of final locations and the ellipse in a graphic (plot the data and the ellipse).
 
-from scipy import linalg p. from matplotlib.patches import Ellipse 
+from scipy import linalg 
+from matplotlib.patches import Ellipse 
+
 s = 2.447651936039926 #assume final locations are in x & y 
 mat = np.array([x,y]) # find covariance matrix 
 cmat = np.cov(mat) # compute eigenvals and eigenvects of covariance w. eval, evec = linalg.eigh(cmat) 
