@@ -26,14 +26,15 @@ In the solution 200 points generated using linspace command which is equally spa
 Problem No - 3
 
 Real motion and measurement involves error and this problem will introduce the concepts. Assume that you have a differential drive robot with wheels that are 20cm in radius and L is 12cm. Using the differential drive code (forward kinematics) from the text, develop code to simulate the robot motion when the wheel velocities are ϕ˙1=0.25t2, ϕ˙2=0.5t. The starting location is [0,0] with θ=0. 
-a. Plot the path of the robot on 0≤t≤. It should end up somewhere near [50,60]. 
-b. Assume that you have Gaussian noise added to the omegas each time you evaluate the velocity (each time step). Test with μ=0 and σ=0.3. Write the final location (x,y) to a file and repeat for 100 simulations.
+
+Plot the path of the robot on 0≤t≤. It should end up somewhere near [50,60]. 
+Assume that you have Gaussian noise added to the omegas each time you evaluate the velocity (each time step). Test with μ=0 and σ=0.3. Write the final location (x,y) to a file and repeat for 100 simulations.
 
 mu, sigma = 0.0, 0.3 
 xerr = np.random.normal(mu,sigma, NumP) 
 yerr = np.random.normal(mu,sigma, NumP)
 
-f. Generate a plot that includes the noise free robot path and the final locations for the simulations with noise. 
+Generate a plot that includes the noise free robot path and the final locations for the simulations with noise. 
 
 import numpy as np 
 import pylab as plt i. ... 
@@ -45,23 +46,16 @@ plt.show()
 n. Find the location means and 2x2 covariance matrix for this data set, and compute the eigenvalues and eigenvectors of the matrix. Find the ellipse that these generate. [The major and minor axes directions are given by the eigenvectors. Show the point cloud of final locations and the ellipse in a graphic (plot the data and the ellipse).
 
 from scipy import linalg p. from matplotlib.patches import Ellipse 
-s = 2.447651936039926 
-# assume final locations are in x & y 
-mat = np.array([x,y]) 
-# find covariance matrix 
-cmat = np.cov(mat) 
-# compute eigenvals and eigenvects of covariance w. eval, evec = linalg.eigh(cmat) 
+s = 2.447651936039926 #assume final locations are in x & y 
+mat = np.array([x,y]) # find covariance matrix 
+cmat = np.cov(mat) # compute eigenvals and eigenvects of covariance w. eval, evec = linalg.eigh(cmat) 
 r1 = 2*s*sqrt(evals[0]) 
-r2 = 2*s*sqrt(evals[1]) 
-# find ellipse rotation 
+r2 = 2*s*sqrt(evals[1]) # find ellipse rotation 
 angle = 180*atan2(evec[0,1],evec[0,0])/np.pi bb.  
-ell = Ellipse((np.mean(x),np.mean(y)),r1,r2,angle) 
-# make the ellipse subplot 
+ell = Ellipse((np.mean(x),np.mean(y)),r1,r2,angle) # make the ellipse subplot 
 a = plt.subplot(111, aspect='equal') 
-ell.set_alpha(0.1) 
-# make the ellipse lighter 
-add_artist(ell) 
-# add this to the plot
+ell.set_alpha(0.1) # make the ellipse lighter 
+add_artist(ell) # add this to the plot
 
 Solution (1st subproblem) – 
 
