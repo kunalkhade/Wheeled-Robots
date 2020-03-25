@@ -38,5 +38,8 @@ Solution (2nd and 3rd problem) –
 Continue to the first solution, in this problem noise is added into the velocities and accordingly, 10 different paths plotted with nose in red color. All paths then concatenate with each other using numpy function. Blue path indicates the noise-free path which is the exact path of the robot that has to take from source to destination.
 
 
+Problem Number - 4
+Using python, drive the DD robot along the following points at uniform speed with a p-controller: (0,0), (1,1), (2,0), (3,-1), (4,0), (5,1), (4,2), (3,3), (2, 3), (1,2), (0,1), (0,0). Ramp up at the first point and ramp down to stop at the last point. Assume the units for the previous points are in meters. The DD robot will have L = 5cm and R = 2cm, and be a 10cm diameter robot. Plot the points and the robot’s path. Note: you don’t have to slow down for the interior points on the list. Use the 10cm diameter as the switching distance.
 
-
+Solution  – 
+In this problem proportional controller is used in order to correct the error between current position of robot and desired positions (xend, yend). There are 2 controlled parameters that variable which are orientation and velocity. In this case I considered a constant velocity and change in orientation as a error. Depending on the error proportionally gain added into the system and try to correct orientation. In the beginning robot uses minimum speed to ramp up. And at the end it decreases its speed in order to get smooth motion between the complete journey (Ref Appendix problem no1 code). Program is developed on the basis of 1800 msec which is linearly sample. Matplot library used to generate plot.
