@@ -1,7 +1,7 @@
 # Wheeled-Robots
 Robotics Programs -Differential Drive Robot, Mecanum Drive robot
 
-Problem No – 4
+Problem No – 1
 
 Given a differential drive robot starting from (0,0,0) find the final position when wheel velocities are
 given by:
