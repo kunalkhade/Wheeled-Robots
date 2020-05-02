@@ -9,10 +9,12 @@ t=0 to t=5: 𝜔1 = 2, 𝜔2 = 2
 t=5 to t=6: 𝜔1 = 3, 𝜔2 = 4
 t=6 to t=10: 𝜔1 = 1, 𝜔
 
-
 Solution –
 
 Full Problem Solution – The problem statement is divided into three different time slots (t0-t1, t1-t2, t2- t3). So there are three different problem statements and solved one by one. Each time slot is divided into 50 different points and sampled them. Nine blank arrays assigned (xp1,2,3 yp1,2,3 th1,2,3) which stores position and orientation information of differential drive robot. Six different wheel speeds assign in order to get the movement of the robot mentioned in the problem statement. In three different ‘for’ loops made in order to get three arrays which have information about the robot’s movement. Combine three strings and plot using matplot library (path of the robot fig.1).
+
+![4 1](https://user-images.githubusercontent.com/50337861/80894076-cc5e4500-8c94-11ea-9c48-5362deb87dad.png)
+
 
 Problem No - 2
 
@@ -22,6 +24,9 @@ Showing the orientation takes a bit more work. Matplotlib provides a vector plot
 Solution – 
 
 In the solution 200 points generated using linspace command which is equally spaced between 0to10 time frame. Blank array for Xp, Yp and Th generated in order to store the location of the mechanum wheel robot. Parameter of the robot is already provided in the problem statement. A B and C are the vehicle equation used from the textbook which is used to generate state co-ordinates of the robot. The array of x,y, and th parameters generate and store into the above blank arrays. Plot the points with the help of matplotlib library. The quiver function is used from matplotlib in order to generate the orientation of the robot and plot. Display all the plotted points using show command.
+
+![1](https://user-images.githubusercontent.com/50337861/80894113-59090300-8c95-11ea-9b18-9564807c326f.JPG)
+
 
 Problem No - 3
 
@@ -33,6 +38,8 @@ Solution  –
 
 In the solution equal 100 points generated from 0 to 5. Dotphi1 and dotphi2 velocities are provided in order to compute the robot motion. Blank array Xp Yp and Th are made in order to store x y and th coordinates. Using for loop co-ordinates will be generated and store into blank arrays. Plot and show all the coordinates using matplotlib commands.
 
+![11](https://user-images.githubusercontent.com/50337861/80894119-6cb46980-8c95-11ea-9b6d-4a3f7de2fa65.JPG)
+
 Problem Number - 4
 
 Using python, drive the DD robot along the following points at uniform speed with a p-controller: (0,0), (1,1), (2,0), (3,-1), (4,0), (5,1), (4,2), (3,3), (2, 3), (1,2), (0,1), (0,0). Ramp up at the first point and ramp down to stop at the last point. Assume the units for the previous points are in meters. The DD robot will have L = 5cm and R = 2cm, and be a 10cm diameter robot. Plot the points and the robot’s path. Note: you don’t have to slow down for the interior points on the list. Use the 10cm diameter as the switching distance.
@@ -40,3 +47,5 @@ Using python, drive the DD robot along the following points at uniform speed wit
 Solution  – 
 
 In this problem proportional controller is used in order to correct the error between current position of robot and desired positions (xend, yend). There are 2 controlled parameters that variable which are orientation and velocity. In this case I considered a constant velocity and change in orientation as a error. Depending on the error proportionally gain added into the system and try to correct orientation. In the beginning robot uses minimum speed to ramp up. And at the end it decreases its speed in order to get smooth motion between the complete journey (Ref Appendix problem no1 code). Program is developed on the basis of 1800 msec which is linearly sample. Matplot library used to generate plot.
+
+![first](https://user-images.githubusercontent.com/50337861/80894134-abe2ba80-8c95-11ea-9f63-589d645dfe10.png)
